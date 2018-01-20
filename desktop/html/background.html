@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HaitGo Desktop Powered by HaitGo!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+ <script language="javascript" src="load.js"></script>
+</head>
+<style>
+body{font-size:14px; margin:10px;}
+</style>
+<body  >
+<p>
+  <font color="red">注意：所有页面必须引入load.js才能和桌面交互</font>
+  <br />
+  1、icoNotice('A1',80);
+  <input type="button" onclick="icoNotice('A1',80)"  value="给图标创建数量提示" contextmenu="alert(123)" />
+  <br />
+  2、unload('me');unload('窗体Aid');
+  <input type="button" onclick="unload('me')"  value="关闭当前窗体" />
+  <br />
+  3、createWind('W2','百度一下','图标路径','http://www.baidu.com','big',680,420);<input type="button" onclick="createWind('W2','百度一下','sdf','http://www.baidu.com','big',680,420);"  value="打开窗口" />
+  <br />
+  4、createNotice('请注意！',0)<input type="button" onclick="createNotice('请注意！',0)" value="请注意" />
+  <br />
+  5、createNotice('操作成功',1)<input type="button" onclick="createNotice('操作成功',1)" value="操作成功" />
+  <br />
+  6、createNotice('操作失败',2)<input type="button" onclick="createNotice('操作失败',2)" value="操作失败" />
+  <br />
+  7、msgBox('测试',400,200)<input type="button" onclick="msgBox('这里只有提示，其它什么都没有',400,100)" value="提示框" />
+  <br />&nbsp;&nbsp;&nbsp;注意：不给回调函数，就只会出现一个确定按钮
+  <br />
+  8、msgBox('测试',400,200,function(){alert('回调成功！');})<input type="button" onclick="msgBox('确定要执行当前页面的代码吗？',400,100,function(){alert('回调成功！');})" value="有回调对话框" />
+</body> 
+</html>

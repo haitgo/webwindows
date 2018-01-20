@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+html{
+margin:0px;overflow:hidden;height:100%;width:100%;
+scrollbar-face-color: #F7F5F4;
+scrollbar-highlight-color: #CCCCCC;
+scrollbar-shadow-color: #CCCCCC;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-arrow-color: #CCCCCC;
+scrollbar-track-color: #ffffff;
+scrollbar-darkshadow-color: #ffffff;
+}
+/*background:#0B78BD;*/
+body{height:100%;width:100%;overflow:hidden;margin:0px;font: 15px 'Microsoft YaHei','宋体',STHeiti,Verdana,Arial,Helvetica,sans-serif; font-size:12px;color:#333333}
+ul,li{list-style:none}
+img{border:0px}
+form{margin:0px}
+a{cursor:pointer}
+a:link {color:#333333;text-decoration:none}
+a:visited {text-decoration:none;color:#333333}
+a:hover {text-decoration:none}
+a:active {text-decoration:none;color:#333333}
+.Winbtn{BORDER-RIGHT:#7b9ebd 1px solid;PADDING-RIGHT:2px;BORDER-TOP:#7b9ebd 1px solid;PADDING-LEFT:2px;FONT-SIZE:12px;FILTER:progid:DXImageTransform.Microsoft.GradIEnt(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde);BORDER-LEFT:#7b9ebd 1px solid;CURSOR:hand;COLOR:black;PADDING-TOP:2px;BORDER-BOTTOM: #7b9ebd 1px solid}
+.But{width:250px;height:72px;background:url(but.gif)}
+.ButDiv{width:70px;height:24px;overflow:hidden}
+/*加载窗体*/
+#Win_Loading{position:absolute;z-index:1000;top:0px;left:0px;width:100%;height:100%;background:#3A3A3A;text-align:center}
+#loadingGif{width:32px;height:32px;left:50%;top:50%;margin-top:-16px; margin-left:-16px;position:absolute;}
+/*登陆*/
+#Win_LoginText{height:150px;width:320px;padding:0px 0px 0px 40px}
+.Win_LoginInp{height:21px;width:100%;margin-top:8px}
+.Win_LoginInp input{height:19px;width:220px;background:#F1F1F1;line-height:18px;border:1px #0B649C solid;color:#0B649C}
+
+.Win_Div{position:absolute;z-index:1;top:0px;left:0px;width:100%;height:100%}
+#Win_Win{ z-index:2;position:absolute;top:0px;left:0px;width:100%;height:100%; overflow:hidden}/*桌面*/
+
+#Win_WinIco{}
+#Win_WinBg{}
+#Win_WinBg img{width:100%;height:100%;border:0px}
+#Win_WinPage{position:absolute;z-index:1;top:0px;left:0px}
+
+#Win_WinIco div{cursor:default;}
+.Ico{position:absolute;width:70px;min-height:70px !important;top:0px;left:0px;z-index:1;padding:5px;color:#FFFFFF}
+.IcoOn{position:absolute;width:70px;min-height:70px !important;top:0px;left:0px;z-index:1;padding:4px;border: #A2D0FF 1px solid;background:url("backgrounda.png");color:#FFF;border-radius:3px;
+-moz-border-radius:3px;
+ }
+ /*图标*/
+.IcoImg{margin:auto;width:100%;height:50px;margin-bottom:3px;overflow:hidden;text-align:center;}
+.IcoImg_img{margin:auto;width:50px;height:50px;background:url(ico.png) no-repeat;}
+
+.IcoText{width:100%;min-height:20px !important;line-height:20px;font-size:14px;overflow:hidden;white-space:nowrap;text-align:center;text-overflow: ellipsis;}
+.IcoText span{width:70px;background:none repeat scroll 0 0 rgba(0, 0, 0, 0.3);border-radius:10px 10px 10px 10px;filter:none;color:#fff;display:inline-block;height:20px;line-height:20px;overflow:hidden;padding:0 ;position:relative;text-align:center;text-overflow:ellipsis;white-space:nowrap;z-index:1;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/desktop/css/pre_txt.png', sizingMethod='scale')}/*图标文字内容*/
+.IcoTextOn{width:100%;min-height:20px !important;line-height:20px;font-size:14px;text-align:center;text-overflow: ellipsis;}
+.IcoBg{position:absolute;z-index:2;background:#FFF;width:70px;height:70px;left:0px;top:0px;filter:alpha(opacity=1);opacity:0.0;-moz-opacity:0.0; -khtml-opacity:0.0;} 
+.IcoNotice{ text-align:center;width:20px;height:20px;line-height:20px; background:url("IcoNotice.png");right:0px;top:0px; position:absolute;}
+#Win_WinIcoTis{width:100px;height:2px; background:#FFF;left:100px;top:200px; position:absolute; z-index:100;filter:alpha(opacity=50);opacity:0.5;-moz-opacity:0.5; -khtml-opacity:0.5;}
+ 
+/*右键*/
+#Win_Rmenu{position:absolute;z-index:20;box-shadow: 0 0 25px #666;border-radius:3px ;width:158px;font-size:14px;padding:3px 1px 3px 1px; border:#A2A2A2 1px solid;left:0px;top:0px;background:#F6F6F6; }
+#Win_Rmenu li{height:23px;text-align:left;width:100%;display:block;line-height:23px; float:left;cursor:pointer }
+#Win_Rmenu li:hover{ background:RGB(85,121,186);color:#FFF }
+#Win_Rmenu li b{width:20px;height:23px;float:left;text-align:center; line-height:23px;color:#AAA}
+#Win_Rmenu li a{float:left;width:100px}
+  /*新加*/
+#Move_bg{position:fixed; z-index:1000; width:100%; height:100%; background-color:#000000;filter:alpha(opacity=0);opacity:0;-moz-opacity:0; -khtml-opacity:0;left:0px;top:0px}
+/*对话框*/
+/*对话框*/
+#Win_Msg{position:absolute;z-index:99;left:0px;top:0px;width:100%;height:100%;}
+#Win_MsgBg{position:absolute;z-index:1;left:0px;top:0px;width:100%;height:100%;background:#000000;filter:alpha(opacity=30);opacity:0.3}
+#Win_MsgDiv{ box-shadow: 0 0 30px #000;border-radius:5px;position:absolute;z-index:2;background:url("WinAero/tm.png");border:#555 1px solid;}
+.Win_MsgDivBut{height:25px;line-height:25px; overflow:visible;padding:0 15px 0 15px}
+#Win_MsgTit{height:30px;color:#FFF;font-weight:bold;line-height:30px; width:100%;font-size:14px }
+#Win_MsgText{word-break:break-all;color:#333;font-size:14px;width:264px;min-height:30px;overflow:hidden;line-height:20px;padding:10px;}
+#Win_MsgText a{color:#005DB4}
+#Win_MsgBut{height:30px;text-align:center;line-height:30px}
+#Win_MsgTab{background:#FFF;margin-left:5px;float:left;top:35px;} 
+ 
+
+/*filter:alpha(opacity=0);opacity:0.0;-moz-opacity:0.0; -khtml-opacity:0.0;*/
+ /*加载*/
+.loaddiv{width:100%;height:100%; background:url(loading2.gif) no-repeat; background-position:center; z-index:10000; position:absolute; left:0px;top:0px; }
+#Win_tis{ z-index:9999;width:200px;height:50px; background:url(backtis.png); position:absolute;left:50%;top:50%; margin-left:-100px; margin-top:-50px;color:#FFF;font-size:20px;font-weight:100;line-height:50px; text-align:center; letter-spacing:2px;}/*提示框*/
+/*顶部导航栏*/
+#Win_TopBar{width:100%;height:40px; background:url("bg.png");left:0px;top:opx; position:absolute; z-index:100;list-style:none; }
+#Win_TopBarLogo{width:100px;height:35px;margin-left:20px;margin-right:20px; float:left; background:url("logo.png"); margin-top:5px;}
+#Win_TopBar span{min-width:50px !important;cursor:pointer; text-align:center;height:35px;line-height:40px;float:left;color:#FFF; padding:0 8px 0 8px; margin-left:1px;font-size:14px; }
+.headon{background:url("bg_3.png");}
+.headno{ background:none;}
+.headno:hover,.headon:hover{ background:url("bg_3.png");}
+/*渐变提示框 */
+.gb_tip_layer, .gb_tip_layer .gtl_ico_succ, .gb_tip_layer .gtl_ico_fail, .gb_tip_layer .gtl_ico_hits,  .gb_tip_layer .gtl_end
+{ background-image: url( "gb_tip_layer.png" );
+    background-repeat: no-repeat;
+    color:#777;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    height: 54px;
+    line-height: 54px;
+	z-index:10000;
+}
+.gb_tip_layer
+{
+    background-position: 0 -161px;
+    background-repeat: repeat-x;
+    left: 45%;
+    padding: 0 18px 0 9px;
+    position: absolute;
+    top: 50%;
+    font-family: Arial,Simsun, "Arial Unicode MS" ,Mingliu,Helvetica;
+    font-size: 14px;
+}
+.gb_tip_layer .gtl_ico_succ
+{
+    background-position: -6px 0;
+    left: -45px;
+    position: absolute;
+    top: 0;
+    width: 45px;
+}
+.gb_tip_layer .gtl_end
+{
+    background-position: 0 0;
+    position: absolute;
+    right: -6px;
+    top: 0;
+    width: 6px;
+}
+.gb_tip_layer .gtl_ico_fail
+{
+    background-position: -6px -108px;
+    left: -45px;
+    position: absolute;
+    top: 0;
+    width: 45px;
+}
+
+.gb_tip_layer .gtl_ico_hits
+{
+    background-position: -6px -54px;
+    left: -45px;
+    position: absolute;
+    top: 0;
+    width: 45px;
+}
+/*--------------------winStyle---------------------------------------*/
+@charset "utf-8";
+/*窗体*/
+.WinCss{position:absolute;overflow:hidden;border:#7E5A36 1px solid; background:#FFF; box-shadow: 0 0 30px #000;border-radius:5px;}
+.WinMove{position:absolute;z-index:1;width:100%;height:30px;top:0px;left:0px;background:url(b.gif)}
+.WinClose{position:absolute;z-index:2;top:3px;right:3px;width:94px;overflow:hidden;height:20px}
+.WinClose div{float:right;height:20px;overflow:hidden; margin-top:5px;}
+.WinClose div img{background:url(win_menu.png);width:100px;height:51px;}/*最大化最小化按钮*/
+.WinResize{cursor:SE-resize;position:absolute;z-index:2;bottom:0px;right:0px;width:12px;height:12px;overflow:hidden;background:url(resize.png) no-repeat; }/*no-repeat*/
+.WinIframe{position:absolute;z-index:-1;top:0px;width:100%;height:100%;filter:alpha(opacity=0);opacity:0;-moz-opacity:0; -khtml-opacity:0;}
+.WinCon{word-break:break-all;background:#F4F4F4;overflow-y:auto;overflow-x:hidden}
+
+.WinTab{border:0px;table-layout:fixed;word-break:break-all}
+.Win1{height:30px;width:5px;background:url("WinAero/tl.png")}/*窗体头部左侧*/
+.Win2{font-weight:bold;color:#FFF;background:url("WinAero/tm.png"); }/*窗体通顶*/
+.Win2s{width:40%;height:20px; line-height:20px;padding:0 5px 0 5px;display:inline-block;overflow:hidden;position:relative;text-overflow:ellipsis;white-space:nowrap;}
+.Win3{width:5px;background:url("WinAero/tr.png")}/*窗体头右侧*/
+.Win4{width:5px;background:url("WinAero/lm.png")}/*窗体左侧*/
+.Win5{}
+.Win6{width:5px;background:url("WinAero/rm.png")}/*窗体右侧*/
+.Win7{height:5px;width:5px;background:url("WinAero/bl.png")}/*窗体底部左侧*/
+.Win8{font-size:0px;background:url("WinAero/bm.png")}/*窗体通底*/
+.Win9{width:5px;background:url("WinAero/br.png")}/*窗体底部右侧*/
+
+/*任务栏*/
+#Win_FootTis{height:40px;line-height:40px;min-width:60px !important;position:absolute;z-index:10; bottom:40px; text-align:center;
+background:none repeat scroll 0 0 rgba(0, 0, 0, 0.7);border-radius:3px 3px 3px 3px;filter:none;color:#fff;display:inline-block;overflow:hidden;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/desktop/css/backbar.png', sizingMethod='scale'; padding:0 5px 0 5px; )
+
+}
+#Win_FootTis a{margin-left:10px; margin-right:10px;font-size:15px}
+
+ 
+#Win_Foot{position:absolute;z-index:10;bottom:0px;left:0px;height:40px;width:100%;background:url(footbar.png);}
+.Win_Fline{width:4px;font-size:0px;background:url(TaskbarSeparate.png); background-position:center; }
+
+#Win_FScro{width:18px;padding-top:1px}
+#Win_FScro div{width:15px;height:14px;overflow:hidden;cursor:pointer}
+.Win_FScro_F1{ background:url(skin.gif) no-repeat}
+.Win_FScro_F2{ background:url(skin.gif) -16px 0px no-repeat}
+
+.Win_FootL{width:60px}
+.Win_FootC{}
+.Win_FootR{width:60px;color:#fff;cursor:pointer}
+
+/*任务栏图标*/
+#Win_WinFinfo{position:relative;overflow:hidden;width:150px;height:39px}
+#Win_WinList{position:relative;height:39px;width:120px;overflow:hidden}
+.WinCss_Foot{overflow:hidden;position:relative;float:left;display:inline;margin-right:3px;height:30px;width:150px; margin-top:5px;}
+.WinCss_Fno,.WinCss_Fdown{top:0px;left:0px;width:150px;height:30px;color:#FFFFFF;overflow:hidden;cursor:default; z-index:1; position:absolute;  border-radius:5px;cursor:pointer;}
+.WinCss_Fbg{ z-index:2;width:100%;height:100%;left:0px;top:0px; background:#FFF;position:absolute; filter:alpha(opacity=1);opacity:0.1;-moz-opacity:0.1; -khtml-opacity:0.1;}
+.WinCss_Fno{background:url(TaskbarItem.png);}
+.WinCss_Fno:hover{background:url(TaskbarItemHover.png); border:#FFF 1px solid; border-radius:5px;width:148px;height:28px;}
+.WinCss_Fdown{background:url(TaskbarItemActiveHover.png);}
+
+.WinCss_Fno img,.WinCss_Fno img,.WinCss_Fon img,.WinCss_Fdown img{width:22px;height:22px; margin:5px;margin-left:10px;float:left}
+.WinCss_Foot_tit{width:90px;margin-left:0px;height:30px;line-height:30px;text-align:left;font-size:14px;font-weight:normal;display:inline-block;overflow:hidden; text-overflow:ellipsis;white-space:nowrap;}
+/*锁屏*/
+#Win_lock{ position:fixed;z-index:1001;background:url(background.png);width:100%;height:100%;left:0px;top:0px;display:none}
+#lockInput{width:400px;height:60px;position:absolute;left:50%;top:50%;margin-left:-200px;margin-top:-30px;list-style:none; border:#F90 3px solid}
+#lockInput li{float:left;height:60px;line-height:60px; }
+.lockInputLi1{width:60px;}
+.lockInputLi2{width:260px;}
+.lockInputLiText{width:260px;height:58px;line-height:60px;font-size:24px;border:0px;float:left; padding-left:10px;padding-right:10px}
+.lockInputLi3{width:80px;text-align:center;font-size:24px;background:#006C00;cursor:pointer;color:#FFF;}
+.lockInputLi3:hover{background:#005B00}
+ 
+
+/*开始按钮*/
+#Win_KsMenu{width:30px;height:5px;position:absolute;bottom:39px;left:-1px;background:url(background.png);z-index:20;border:#CCC 1px solid;border-radius: 0  5px 0 0 }
+#KsMenu{background:url(start.png) ;width:30px;height:30px;margin-top:2px;margin-left:15px;margin-right:15px; border-radius:5px;float:left;cursor:pointer;}
+#KsMenu:hover{background:url(start1.png) }
+#Win_desk{background:url(desk.png) ;width:30px;height:30px;margin-top:2px;margin-left:4px;margin-right:6px;cursor:pointer;float:left}
+#Win_desk:hover{ }
+
+#Win_KsMenu_List{width:170px;height:280px;border:#333 1px solid;background:#FFF;margin:8px;float:left;border-radius:5px; overflow:auto}
+#Win_KsMenu_List li{width:164px;float:left;height:40px;line-height:40px;cursor:pointer;border:#FFF 1px solid;font-size:14px;margin:2px;font-weight:bold}
+#Win_KsMenu_List li:hover{ background:#D9ECFF; border:#9DDFFF 1px solid;border-radius:3px;}
+#Win_KsMenu_List img{width:30px;height:30px;float:left;margin:5px 5px 0 10px;}
+#Win_KsMenu_List span{width:100px;height:40px;float:left;margin-left:0px;}
+#Win_KsMenu_Right1{width:90px;height:50px;position:absolute;bottom:15px;right:5px;}
+#Win_KsMenu_Right1 li{width:100%;height:25px;line-height:25px;float:left;color:#FFF;font-size:14px;cursor:pointer}
+#Win_KsMenu_Right1 li:hover{color:#0C0}
+#Win_KsMenu_Right1 li a{margin-left:10px;}
+
+#Win_link img{width:24px;height:24px;margin-top:3px;margin-right:3px;}
+ 
+.grey{-webkit-filter: grayscale(1);/* Webkit */ filter:gray;/* IE6-9 */ filter: grayscale(1);/* W3C */ }

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HaitGo Desktop Powered by HaitGo!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="desktop/css/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="desktop/js/jquery-1.11.1.js"></script> 
+<script>
+/**
+ *该脚本主要用于桌面信息配置
+ */
+ //桌面和图标
+var deskTopData={
+	1:{deskName:"桌面",
+		icos:{ 
+			A1:{title:"我是函数不是窗dfss多个撒地方口",img:1,call:function(){createNotice('我是调用的函数哦',1)},type:"func"},
+			A2:{title:"系统",img:2,url:"test/test.html?sdf",type:"yes",width:700,height:300},
+			A3:{title:"文件",img:3,url:"test/test.html",type:"yes",width:700,height:300},
+			A4:{title:"电话",img:4,url:"test/test.html",type:"no",width:700,height:300},
+			A5:{title:"设置",img:5,url:"test/test.html",type:"no",width:700,height:300},
+			A6:{title:"文章",img:6,url:"test/test.html",type:"no",width:700,height:300},
+			A7:{title:"高手",img:7,url:"test/test.html",type:"no",width:700,height:300},
+			A8:{title:"图标",img:8,url:"test/test.html",type:"no",width:700,height:300}
+		}
+	} 
+}
+var config={//配置信息
+		background:{image:"desktop/img/bg1.jpg",type:"拉伸"},//背景数据
+		autoIco:{},//桌面是否自动排列图标 
+		IcoStartus:{},//图标数据
+		winStatus:{},//窗口数据
+		winOpens:{},//已经打开的窗口
+		pageOn:1,//当前位于第几个桌面
+		AbnormalWind:true//是否在启动的时候加载上次未关闭的窗口 true加载，false不加载
+ 	}
+var configOld=config;
+var win_ini={
+		styleOpen:true,//是否开启特效
+  		lockOutTime:300,//超时锁屏时间，单位:秒，不需要锁屏可删除该参数  
+		lockPassword:"abc",//锁屏密码
+		loadUrl:"/test/test.php",//个人桌面数据ajax加载路径
+		saveUrl:"/test/test.php",//个人桌面数据ajax保存路径
+		saveType:"auto",		 //桌面数据保存方式，ajax
+		saveCall:function(){}	 //这里为自动保存后的回调函数
+	};//系统加载属性
+ 
+</script>
+<script language="javascript" src="desktop/js/doone_main.js"></script>
+</head>
+<body  >
+<div id="Win_Loading" style="">
+ 		<img id="loadingGif" src="desktop/css/loading.gif"   >
+ </div>
+<div id="Win_lock"  info="锁屏">
+	 <div id="lockInput">
+     	<li class="lockInputLi1" id="lockInputLi1"></li>
+        <li class="lockInputLi2"><input type="password" value="" class="lockInputLiText" id="passwordInput"  /></li>
+        <li class="lockInputLi3" id="enterMenu"  onclick="desktop.openLock($('passwordInput').value,function(){$('passwordInput').value=''});">确定</li>
+     </div>
+</div>
+<!--对话框-->
+<div id='Win_Msg' style='display:none'>
+<div id='Win_MsgBg'></div>
+<div id="Win_MsgDiv"></div>
+</div>
+<div id="Win_tis" style="display:none" ></div>
+<!--桌面-->
+<div id="Win_Win" class="Win_Div">
+    <div id="Win_TopBar"  info="导航栏"></div>
+	<div id="Win_WinBg" class="Win_Div" style=""></div>
+    <img id="Win_WinBgls" src="" style="position:absolute;width:100%;height:100%;display:none"/>
+	<div id="Win_WinIco" class="Win_Div" ></div>
+    <div id="Win_WinIcoTis" style="display:none"></div>
+	<div id="Win_WinPage"> <input type="hidden" id="test"  style="width:400px" /></div>
+   <div id="Move_bg" style="display:none; "></div>
+ </div>
+<!--状态栏-->
+<div id="Win_FootTis" style="display:none;"></div>
+<div id="Win_Foot">
+<table style="border:0px;width:100%;height:100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <td  align="center" valign="middle" >
+            <img src="desktop/css/b.gif" id="KsMenu" title="开始"   >
+        </td>
+        <td class="Win_Fline">&nbsp;</td>
+        <td >
+            <img src="desktop/css/b.gif" id="Win_desk" title="显示桌面"  onclick="desktop.wind.smallAll();"  >
+        </td>
+        <td class="Win_Fline">&nbsp;</td>
+        <td class="Win_FootC"><div id="Win_WinFinfo"><div id="Win_WinList"></div></div></td>
+        <td id="Win_FScro" style="display:none">
+        <div id="F1" class="Win_FScro_F1"  onmousedown="ChangeWList('left')" onmouseup="ChangeWList('out')"></div>
+        <div id="F2" class="Win_FScro_F2"  style="margin-top:1px"  onmousedown="ChangeWList('right')" onmouseup="ChangeWList('out')"></div>
+        </td>
+        <td class="Win_Fline">&nbsp;</td>
+        <td class="Win_FootR"   align="center" valign="middle" id="Win_link" onclick="desktop.locked();">
+ 			<img src="desktop/css/lock.png"  width="40" title="锁屏" />
+        </td>
+    </tr>
+</table>
+</div>
+<!--开始菜单-->
+<div id="Win_KsMenu" style="display:none"   >
+ 	<div id="Win_KsMenu_List">
+ 		<li>这里放置你的菜单</li>
+    </div>
+    <div id="Win_KsMenu_Right1">
+ 		<li onclick="desktop.exit('确定切换用户吗？')">切换用户</li>
+        <li onclick="desktop.exit('确定退出系统吗？')">退出登录</li>
+    </div>
+</div>
+<!--右键菜单-->
+<div id="Win_Rmenu" class="Win_Rmenu" style="display:none;"></div>
+<div id="Win_None" style="display:none"></div>
+</body>
+<script>
+ 	desktop.start(function(){/*这里可以写在加载完后要调用的函数*/});
+</script>
+</html>
